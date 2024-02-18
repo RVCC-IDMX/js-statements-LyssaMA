@@ -14,6 +14,7 @@
  */
 function logicalAnd(a, b) {
   // write your code here & return
+  return a && b;
 }
 
 /**
@@ -24,6 +25,7 @@ function logicalAnd(a, b) {
  */
 function logicalOr(a, b) {
   // write your code here & return
+  return a || b;
 }
 
 /**
@@ -33,6 +35,7 @@ function logicalOr(a, b) {
  */
 function invertBoolean(bool) {
   // write your code here & return
+  return !bool;
 }
 
 /**
@@ -50,6 +53,13 @@ function invertBoolean(bool) {
  */
 function numberOfOdds(num) {
   // write your code here & return
+  let count = 0;
+  for (let i = 0; i < num; i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 /**
@@ -63,8 +73,12 @@ function numberOfOdds(num) {
  */
 function addUpTheNumbers(num) {
   // write your code here & return
+  let sum = 0;
+  for (let i = 0; i <= num; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
-
 /**
  * Calculates the letter grade for a given score
  * @param {number} score - the numeric grade score for a student
@@ -82,8 +96,20 @@ function addUpTheNumbers(num) {
  */
 function gradeGenerator(score) {
   // write your code here & return
+  if (score < 60) {
+    return 'F';
+  }
+  if (score < 70) {
+    return 'D';
+  }
+  if (score < 80) {
+    return 'C';
+  }
+  if (score < 90) {
+    return 'B';
+  }
+  return 'A';
 }
-
 /**
  * Calculates a string of the student's name and grade
  * @param {string} name - the name of the student
@@ -102,6 +128,11 @@ function gradeGenerator(score) {
  */
 function getGrade(name, score) {
   // write your code here & return
+  const grade = gradeGenerator(score);
+  if (grade === 'A' || grade === 'F') {
+    return `${name} got an ${grade}`;
+  }
+  return `${name} got a ${grade}`;
 }
 
 module.exports = {
